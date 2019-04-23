@@ -1,0 +1,58 @@
+# Spring Cloud Stream - Programming Model Choices
+
+## Build
+
+[source,bash,options=nowrap,subs=attributes]
+----
+mvn clean -U install
+----
+
+## Prep
+
+1) Download `http-source` and `log-sink` applications.
+
+[source,bash,options=nowrap,subs=attributes]
+----
+wget http://repo.spring.io/release/org/springframework/cloud/stream/app/http-source-kafka/2.1.0.RELEASE/http-source-kafka-2.1.0.RELEASE.jar
+
+wget http://repo.spring.io/release/org/springframework/cloud/stream/app/log-sink-kafka/2.1.1.RELEASE/log-sink-kafka-2.1.1.RELEASE.jar
+----
+
+2) Start Kafka on localhost.
+
+## Run
+
+1) Start `http-source`.
+[source,bash,options=nowrap,subs=attributes]
+----
+java -jar http-source-kafka-2.1.0.RELEASE.jar --spring.cloud.stream.bindings.output.destination=incomingDataTopic --spring.cloud.stream.default.contentType=text/plain --server.port=9001
+----
+
+2) Start any of the processors from this project. For example:
+[source,bash,options=nowrap,subs=attributes]
+----
+java -jar kstreams/target/kstreams-0.0.1-SNAPSHOT.jar
+----
+
+3) Start `log-sink`.
+[source,bash,options=nowrap,subs=attributes]
+----
+java -jar log-sink-kafka-2.1.1.RELEASE.jar --spring.cloud.stream.bindings.input.destination=outgoingDataTopic --server.port=900
+----
+
+## Test
+
+Post sample data.
+[source,bash,options=nowrap,subs=attributes]
+----
+± curl localhost:9001 -H "Content-type: text/plain" -d "test data"
+----
+
+## Results
+
+Verify results in the `log-sink` console.
+
+[source,bash,options=nowrap,subs=attributes]
+----
+2019-04-23 14:32:46.440  INFO 67878 --- [container-0-C-1] log-sink                                 : Hello: test data!
+----
