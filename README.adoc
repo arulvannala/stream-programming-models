@@ -48,6 +48,7 @@ Post sample data.
 ± curl localhost:9001 -H "Content-type: text/plain" -d "test data"
 ----
 
+Verify results in the `log-sink` console.
 [source,bash,options=nowrap,subs=attributes]
 ----
 2019-04-23 14:32:46.440  INFO 67878 --- [container-0-C-1] log-sink                                 : Hello: test data!
