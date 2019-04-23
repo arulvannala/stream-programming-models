@@ -10,7 +10,7 @@ public class SimpleStreamProcessor {
 
 	@StreamListener(Processor.INPUT)
 	@SendTo(Processor.OUTPUT)
-	public String messageHandler(String data) {
+	public String messenger(String data) {
 		return "Hello: " + data + "!";
 	}
 }

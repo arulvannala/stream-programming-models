@@ -11,7 +11,7 @@ public class KafkaStreamsProcessor {
 
 	@StreamListener(KafkaStreamsChannels.TEST_INPUT)
 	@SendTo(KafkaStreamsChannels.TEST_OUPUT)
-	public KStream<String, String> messageHandler(KStream<String, String> data) {
+	public KStream<String, String> messenger(KStream<String, String> data) {
 		return data.map((k, v) -> new KeyValue<>(null, "Hello: " + v + "!"));
 	}
 }

@@ -10,7 +10,7 @@ import java.util.function.Function;
 public class FunctionStreamProcessor {
 
 	@Bean
-	public Function<String, String> message() {
+	public Function<String, String> messenger() {
 		return data -> "Hello: " + data + "!";
 	}
 }

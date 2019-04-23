@@ -11,7 +11,7 @@ public class ReactiveStreamProcessor {
 
 	@StreamListener(Processor.INPUT)
 	@SendTo(Processor.OUTPUT)
-	public Flux<String> messageHandler(Flux<String> data) {
+	public Flux<String> messenger(Flux<String> data) {
 		return data.map(incoming -> "Hello: " + incoming + "!");
 	}
 }
