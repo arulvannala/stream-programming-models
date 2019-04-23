@@ -37,7 +37,7 @@ java -jar kstreams/target/kstreams-0.0.1-SNAPSHOT.jar
 3) Start `log-sink`.
 [source,bash,options=nowrap,subs=attributes]
 ----
-java -jar log-sink-kafka-2.1.1.RELEASE.jar --spring.cloud.stream.bindings.input.destination=outgoingDataTopic --server.port=900
+java -jar log-sink-kafka-2.1.1.RELEASE.jar --spring.cloud.stream.bindings.input.destination=outgoingDataTopic --server.port=9003
 ----
 
 ## Test
@@ -47,10 +47,6 @@ Post sample data.
 ----
 ± curl localhost:9001 -H "Content-type: text/plain" -d "test data"
 ----
-
-## Results
-
-Verify results in the `log-sink` console.
 
 [source,bash,options=nowrap,subs=attributes]
 ----
