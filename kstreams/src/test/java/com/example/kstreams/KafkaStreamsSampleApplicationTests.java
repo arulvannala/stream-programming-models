@@ -1,4 +1,4 @@
-package com.example.function;
+package com.example.kstreams;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FunctionApplicationTests {
+public class KafkaStreamsSampleApplicationTests {
 
 	@Test
 	public void contextLoads() {

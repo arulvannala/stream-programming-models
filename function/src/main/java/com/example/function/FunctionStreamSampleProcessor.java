@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.function.Function;
 
 @EnableBinding(Processor.class)
-public class FunctionStreamProcessor {
+public class FunctionStreamSampleProcessor {
 
 	@Bean
 	public Function<String, String> messenger() {

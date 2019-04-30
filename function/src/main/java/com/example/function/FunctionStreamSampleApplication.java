@@ -1,13 +1,13 @@
-package com.example.simple;
+package com.example.function;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SimpleStreamApplication {
+public class FunctionStreamSampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SimpleStreamApplication.class, args);
+		SpringApplication.run(FunctionStreamSampleApplication.class, args);
 	}
 
 }

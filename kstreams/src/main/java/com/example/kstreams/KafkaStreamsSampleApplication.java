@@ -1,13 +1,13 @@
-package com.example.function;
+package com.example.kstreams;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FunctionStreamApplication {
+public class KafkaStreamsSampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FunctionStreamApplication.class, args);
+		SpringApplication.run(KafkaStreamsSampleApplication.class, args);
 	}
 
 }
